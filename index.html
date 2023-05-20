@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+            function selectImage() {
+      // Create an input element of type "file"
+      var input = document.createElement('input');
+      input.type = 'image';
+      
+      // Set accept attribute to specify that only image files are allowed
+      input.accept = '*/*';
+      
+      // Set the onchange event handler to trigger when a file is selected
+      input.onchange = function(event) {
+        var file = event.target.files[0];
+        
+        // Check if a file was selected
+        if (file) {
+          var reader = new FileReader();
+          
+          // Set the onload event handler to display the selected image
+          reader.onload = function() {
+            var previewImage = document.getElementById('preview');
+            previewImage.src = reader.result;
+            previewImage.style.display = 'block';
+          }
+          
+          // Read the selected file as a Data URL
+          reader.readAsDataURL(file);
+        }
+      };
+      
+      // Trigger the file input dialog when the button is clicked
+      input.click();
+    }
+    //     function handleFileSelect(event) {
+    //     const input = document.createElement("input");
+    //     input.type = "file";
+    //     input.accept = ".txt, .pdf, .doc, .png, .jpg"; // Specify the file types allowed
+        
+    //     input.onchange = function (e) {
+    //       const file = e.target.files[0];
+    //       console.log("Selected file:", file.name);
+    //       uploadFile(file);
+    //     };
+        
+    //     input.click();
+    //   }
+      
+    //   function uploadFile(file) {
+    //     const formData = new FormData();
+    //     formData.append("file", file);
+        
+    //     // Replace the URL with your own endpoint for file upload
+    //     const uploadUrl = "https://example.com/upload";
+        
+    //     fetch(uploadUrl, {
+    //       method: "POST",
+    //       body: formData
+    //     })
+    //     .then(response => {
+    //       if (response.ok) {
+    //         console.log("File uploaded successfully!");
+    //         // Do something after successful file upload
+    //       } else {
+    //         console.error("File upload failed.");
+    //         // Handle the error condition
+    //       }
+    //     })
+    //     .catch(error => {
+    //       console.error("File upload error:", error);
+    //       // Handle any network or other errors
+    //     });
+    //   }
+      </script>  
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Binary Image Classification</h1>
+            <nav>
+                <ul id="sidemenu">
+                    <!-- <li><a href="#header">Binary Image Classification</a></li> -->
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Other Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>              
+        </div>
+        <div class="bodycontainer">
+            <div class="imagecontainer">
+                <img src="https://ih1.redbubble.net/image.1066412443.0216/st,small,845x845-pad,1000x1000,f8f8f8.u4.jpg" alt="" class="img">
+            </div>
+            <div class="buttoncontainer">
+                <button onclick="handleFileSelect(event)" class="choosefile">Select File</button>
+                <button onclick="handleFileSelect(event)" class="upload">UPLOAD</button>
+                <button class="submit">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.jsx"></script>
+</html>

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Jost&family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #FFE5B4;
+    color: #fff;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+.container{
+    padding: 10px 10%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    justify-content: space-evenly;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 50px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    
+ }
+ nav ul li a{
+    text-decoration: none;
+ }
+
+ .bodycontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 50px;
+ }
+
+ .buttoncontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 50px;
+    width: 100%;
+ }
+
+ .upload{
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    background: rgb(13, 31, 107);
+    color: white;
+    border: 2px solid white;
+ }
+ .submit{
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    border: white 2px solid;
+ }
+ img{
+    width: 100%;
+    height: 100%;
+ }
+ .upload:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: 0.3s ease-in;
+ }
+ .submit:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: 0.3s ease-in;
+ }
+ .choosefile{
+   width: 50%;
+   height: 50px;
+   border-radius: 5px;
+   background: skyblue;
+   color: black;
+   border: darkblue 2px solid;
+}
+.choosefile:hover{
+   cursor: pointer;
+   transform: scale(1.3);
+   transition: 0.3s ease-in;
+}
